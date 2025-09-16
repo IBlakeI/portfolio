@@ -1,13 +1,18 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "@fontsource/fira-code"; /* Defaults to weight 400 */
+@import "@fontsource/fira-code";
 
 @custom-variant dark (&:is(.dark *));
 
+html,
+body,
 #root {
-  width: 100vw;
-  height: 100vh;
-  font-family: "Fira Code", monospace;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: rgb(7, 7, 7);
+  overflow-x: hidden;
 }
 
 @theme inline {

@@ -9,9 +9,9 @@ import { Badge } from "./components/ui/badge";
 
 function App() {
   return (
-    <div className="bg-background dark flex h-full w-full flex-col items-center p-10 text-white">
-      <div className="flex justify-center">
-        <div className="flex h-20 w-120 items-center gap-5">
+    <div className="bg-background dark flex min-h-screen w-full flex-col items-center px-4 py-6 text-white">
+      <div className="flex w-full max-w-2xl flex-col gap-4 md:flex-row md:justify-between">
+        <div className="flex items-center gap-5">
           <Avatar className="h-20 w-20">
             <AvatarImage src="/BLogo.png" />
             <AvatarFallback>CN</AvatarFallback>
@@ -23,13 +23,13 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="flex h-20 items-center gap-2">
+        <div className="flex items-center gap-2 text-sm md:text-base">
           <MapPin className="text-blue-300" />
           Huntsville, AL
         </div>
       </div>
-      <Separator orientation="horizontal" className="my-4 !w-180" />
-      <div className="flex flex-col gap-4">
+      <Separator orientation="horizontal" className="my-4 max-w-2xl" />
+      <div className="mr-2 flex w-full max-w-2xl flex-col gap-6">
         <div className="flex gap-2">
           <Button
             variant="outline"
@@ -51,7 +51,7 @@ function App() {
         </div>
         <div className="flex flex-col gap-2">
           <Header label="About Me" />
-          <div className="text-muted-foreground max-w-2xl text-start text-sm leading-6 font-normal">
+          <div className="text-muted-foreground text-left text-sm leading-6 font-normal">
             👋 Hey there! I'm Blake, a passionate software engineer with a knack
             for solving tough problems. I am always looking to improve my skills
             and take on new challenges. When I'm not coding, you can find me
@@ -60,7 +60,7 @@ function App() {
         </div>
         <div className="flex flex-col gap-2">
           <Header label="Education" />
-          <Card className="gap-2 px-5">
+          <Card className="w-full gap-2 px-5">
             <div className="flex justify-between">
               Auburn University
               <span className="text-muted-foreground">2019 - 2023</span>
@@ -73,20 +73,18 @@ function App() {
         </div>
         <div className="flex flex-col gap-2">
           <Header label="Work Experience" />
-          <Card className="gap-2 px-5">
+          <Card className="w-full gap-2 px-5">
             <div className="flex justify-between">
               Trideum Corporation
               <span className="text-muted-foreground">2022 - Present</span>
             </div>
-            <div className="relative flex gap-4">
-              <Separator orientation="vertical" className="bg-accent !h-70" />
-              <div className="absolute top-[5px] left-[-4px] h-2 w-2 bg-white/70" />
-              <div className="absolute top-[85px] left-[-4px] h-2 w-2 bg-white/70" />
-              <div className="absolute top-[195px] left-[-4px] h-2 w-2 bg-white/70" />
-              <div className="flex w-160 flex-col gap-6">
+            <div className="relative flex h-[320px] items-stretch gap-4 md:h-[290px]">
+              <Separator orientation="vertical" className="bg-accent h-full" />
+              <div className="flex w-full flex-col gap-6">
                 <div className="flex w-full flex-col">
-                  <div className="text-muted-foreground flex justify-between text-sm">
+                  <div className="text-muted-foreground relative flex justify-between text-sm">
                     <span className="text-white">Software Engineer</span>
+                    <div className="absolute top-[6px] left-[-20px] h-2 w-2 bg-white/70" />
                     <span>August 2025 - Present</span>
                   </div>
                   <span className="text-muted-foreground pt-1 text-xs">
@@ -96,7 +94,8 @@ function App() {
                   </span>
                 </div>
                 <div className="flex w-full flex-col">
-                  <div className="text-muted-foreground flex justify-between text-sm">
+                  <div className="text-muted-foreground relative flex justify-between text-sm">
+                    <div className="absolute top-[6px] left-[-20px] h-2 w-2 bg-white/70" />
                     <span className="text-white">Junior Software Engineer</span>
                     <span>May 2023 - August 2025</span>
                   </div>
@@ -107,7 +106,7 @@ function App() {
                   <span className="text-muted-foreground pt-1 text-xs">
                     - Completed full-stack tickets using Go and React
                   </span>
-                  <span className="text-muted-foreground flex gap-2 pt-1 text-xs">
+                  <span className="text-muted-foreground flex flex-wrap gap-2 pt-1 text-xs">
                     <Badge className="bg-blue-600 text-white">React</Badge>
                     <Badge className="bg-blue-600 text-white">
                       TailwindCSS
@@ -118,7 +117,8 @@ function App() {
                   </span>
                 </div>
                 <div className="flex w-full flex-col">
-                  <div className="text-muted-foreground flex justify-between text-sm">
+                  <div className="text-muted-foreground relative flex justify-between text-sm">
+                    <div className="absolute top-[6px] left-[-20px] h-2 w-2 bg-white/70" />
                     <span className="text-white">Software Engineer Intern</span>
                     <span>May 2022 - May 2023</span>
                   </div>
@@ -129,7 +129,7 @@ function App() {
                   <span className="text-muted-foreground pt-1 text-xs">
                     - Integrated a python back-end using Gunicorn and Flask
                   </span>
-                  <span className="text-muted-foreground flex gap-2 pt-1 text-xs">
+                  <span className="text-muted-foreground flex flex-wrap gap-2 pt-1 text-xs">
                     <Badge className="bg-blue-600 text-white">React</Badge>
                     <Badge className="bg-blue-600 text-white">Flask</Badge>
                     <Badge className="bg-blue-600 text-white">Gunicorn</Badge>
