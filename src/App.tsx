@@ -83,8 +83,8 @@ function App() {
               <div className="flex w-full flex-col gap-6">
                 <div className="flex w-full flex-col">
                   <div className="text-muted-foreground relative flex justify-between text-sm">
+                    <div className="bg-muted-foreground absolute top-[6px] left-[-20px] h-2 w-2" />
                     <span className="text-white">Software Engineer</span>
-                    <div className="absolute top-[6px] left-[-20px] h-2 w-2 bg-white/70" />
                     <span>August 2025 - Present</span>
                   </div>
                   <span className="text-muted-foreground pt-1 text-xs">
@@ -95,7 +95,7 @@ function App() {
                 </div>
                 <div className="flex w-full flex-col">
                   <div className="text-muted-foreground relative flex justify-between text-sm">
-                    <div className="absolute top-[6px] left-[-20px] h-2 w-2 bg-white/70" />
+                    <div className="bg-muted-foreground absolute top-[6px] left-[-20px] h-2 w-2" />
                     <span className="text-white">Junior Software Engineer</span>
                     <span>May 2023 - August 2025</span>
                   </div>
@@ -118,7 +118,7 @@ function App() {
                 </div>
                 <div className="flex w-full flex-col">
                   <div className="text-muted-foreground relative flex justify-between text-sm">
-                    <div className="absolute top-[6px] left-[-20px] h-2 w-2 bg-white/70" />
+                    <div className="bg-muted-foreground absolute top-[6px] left-[-20px] h-2 w-2" />
                     <span className="text-white">Software Engineer Intern</span>
                     <span>May 2022 - May 2023</span>
                   </div>
