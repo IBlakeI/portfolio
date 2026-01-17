@@ -5,11 +5,11 @@ import { Separator } from "./components/ui/separator";
 import { Button } from "./components/ui/button";
 import Header from "./components/Header";
 import { Card } from "./components/ui/card";
-import { Badge } from "./components/ui/badge";
+import JobTitle from "./components/JobTitle";
 
-function App() {
+const App = () => {
   return (
-    <div className="bg-background dark flex min-h-screen w-full flex-col items-center px-4 py-6 text-white">
+    <div className="bg-background dark flex min-h-screen w-full flex-col items-center overflow-y-auto px-4 py-6 text-white">
       <div className="flex w-full max-w-2xl flex-col gap-4 md:flex-row md:justify-between">
         <div className="flex items-center gap-5">
           <Avatar className="h-20 w-20">
@@ -53,89 +53,76 @@ function App() {
           <Header label="About Me" />
           <div className="text-muted-foreground text-left text-sm leading-6 font-normal">
             👋 Hey there! I'm Blake, a passionate software engineer with a knack
-            for solving tough problems. I am always looking to improve my skills
-            and take on new challenges. When I'm not coding, you can find me
-            fishing or playing video games.
+            for solving tough problems. I primarily work on front-end
+            development using React and Electron. I am always looking to improve
+            my skills and take on new challenges. When I'm not coding, you can
+            find me fishing or playing video games.
           </div>
         </div>
         <div className="flex flex-col gap-2">
           <Header label="Education" />
-          <Card className="w-full gap-2 px-5">
-            <div className="flex justify-between">
-              Auburn University
-              <span className="text-muted-foreground">2019 - 2023</span>
+          <Card className="flex w-full flex-row items-center gap-3 px-5">
+            <div className="h-9 w-13 overflow-hidden">
+              <img
+                src="/Auburn.png"
+                className="h-full w-full origin-center object-cover"
+              />
             </div>
-            <div className="text-muted-foreground flex justify-between text-sm">
-              B.S. in Computer Science
-              <span>GPA: 3.96</span>
+            <div className="flex w-full flex-col justify-center gap-1">
+              <div className="flex justify-between">
+                Auburn University
+                <span className="text-muted-foreground">2019 - 2023</span>
+              </div>
+              <div className="text-muted-foreground flex justify-between text-sm">
+                B.S. in Computer Science
+                <span>GPA: 3.96</span>
+              </div>
             </div>
           </Card>
         </div>
         <div className="flex flex-col gap-2">
           <Header label="Work Experience" />
-          <Card className="w-full gap-2 px-5">
+          <Card className="h-fit w-full gap-2 px-5">
             <div className="flex justify-between">
               Trideum Corporation
               <span className="text-muted-foreground">2022 - Present</span>
             </div>
-            <div className="relative flex h-[320px] items-stretch gap-4 md:h-[290px]">
-              <Separator orientation="vertical" className="bg-accent h-full" />
+            <div className="relative flex min-h-full items-stretch gap-4">
+              <div className="w-[1px]" />
+              <Separator
+                orientation="vertical"
+                className="bg-accent absolute top-0 bottom-0 left-0 w-px"
+              />
               <div className="flex w-full flex-col gap-6">
-                <div className="flex w-full flex-col">
-                  <div className="text-muted-foreground relative flex justify-between text-sm">
-                    <div className="bg-muted-foreground absolute top-[6px] left-[-20px] h-2 w-2" />
-                    <span className="text-white">Software Engineer</span>
-                    <span>August 2025 - Present</span>
-                  </div>
-                  <span className="text-muted-foreground pt-1 text-xs">
-                    - Led a team of 3 engineers to develop a mission critical
-                    Electron application communicating to a Go backend via
-                    websockets
-                  </span>
-                </div>
-                <div className="flex w-full flex-col">
-                  <div className="text-muted-foreground relative flex justify-between text-sm">
-                    <div className="bg-muted-foreground absolute top-[6px] left-[-20px] h-2 w-2" />
-                    <span className="text-white">Junior Software Engineer</span>
-                    <span>May 2023 - August 2025</span>
-                  </div>
-                  <span className="text-muted-foreground pt-1 text-xs">
-                    - Spearheaded front-end development for 3 projects using
-                    React and Electron
-                  </span>
-                  <span className="text-muted-foreground pt-1 text-xs">
-                    - Completed full-stack tickets using Go and React
-                  </span>
-                  <span className="text-muted-foreground flex flex-wrap gap-2 pt-1 text-xs">
-                    <Badge className="bg-blue-600 text-white">React</Badge>
-                    <Badge className="bg-blue-600 text-white">
-                      TailwindCSS
-                    </Badge>
-                    <Badge className="bg-blue-600 text-white">Electron</Badge>
-                    <Badge className="bg-blue-600 text-white">Go</Badge>
-                    <Badge className="bg-blue-600 text-white">Docker</Badge>
-                  </span>
-                </div>
-                <div className="flex w-full flex-col">
-                  <div className="text-muted-foreground relative flex justify-between text-sm">
-                    <div className="bg-muted-foreground absolute top-[6px] left-[-20px] h-2 w-2" />
-                    <span className="text-white">Software Engineer Intern</span>
-                    <span>May 2022 - May 2023</span>
-                  </div>
-                  <span className="text-muted-foreground pt-1 text-xs">
-                    - Created a front-end web application from scratch using
-                    React
-                  </span>
-                  <span className="text-muted-foreground pt-1 text-xs">
-                    - Integrated a python back-end using Gunicorn and Flask
-                  </span>
-                  <span className="text-muted-foreground flex flex-wrap gap-2 pt-1 text-xs">
-                    <Badge className="bg-blue-600 text-white">React</Badge>
-                    <Badge className="bg-blue-600 text-white">Flask</Badge>
-                    <Badge className="bg-blue-600 text-white">Gunicorn</Badge>
-                    <Badge className="bg-blue-600 text-white">Python</Badge>
-                  </span>
-                </div>
+                <JobTitle
+                  title="Software Engineer / UI Lead"
+                  dates="August 2025 - Present"
+                  bullets={[
+                    "Led a team of 3 engineers to develop a mission critical Electron application communicating to a Go backend via websockets",
+                    "Architected this Electron application with a focus on modularity and maintainability based on designs from Figma",
+                    "Worked closely with the customer to ensure requirements were met and exceeded",
+                  ]}
+                  badges={["React", "Electron", "Go", "Docker"]}
+                />
+                <JobTitle
+                  title="Junior Software Engineer"
+                  dates="May 2023 - August 2025"
+                  bullets={[
+                    "Spearheaded front-end development for 3 projects using React and Electron",
+                    "Completed full-stack tickets using Go and React",
+                    "Worked with C# on a blazor web application",
+                  ]}
+                  badges={["React", "Electron", "Go", "Docker", "C#"]}
+                />
+                <JobTitle
+                  title="Software Engineer Intern"
+                  dates="May 2022 - May 2023"
+                  bullets={[
+                    "Created a front-end web application from scratch using React",
+                    "Integrated a python back-end using Gunicorn and Flask",
+                  ]}
+                  badges={["React", "Flask", "Gunicorn", "Python"]}
+                />
               </div>
             </div>
           </Card>
@@ -143,6 +130,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
