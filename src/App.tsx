@@ -134,7 +134,7 @@ const App = () => {
           <Card className="flex h-fit w-full flex-col gap-6 px-5">
             <Project
               title="Shadow Cap"
-              image="/public/shadow-cap.png"
+              image="shadow-cap.png"
               bullets={[
                 "Built a ShadowPlay-inspired desktop screen recorder using Electron, React, and TypeScript",
                 "Implemented a rolling buffer system to continuously capture the last X minutes of screen activity",
@@ -151,7 +151,7 @@ const App = () => {
             />
             <Project
               title="Home Lab"
-              image="/public/stats-ui.png"
+              image="stats-ui.png"
               bullets={[
                 "Raspberry Pi-based homelab with Pi-hole DNS filtering",
                 "Full-stack system monitoring dashboard (React + Vite + TypeScript + FastAPI)",
