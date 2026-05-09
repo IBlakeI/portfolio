@@ -6,6 +6,7 @@ import { Button } from "./components/ui/button";
 import Header from "./components/Header";
 import { Card } from "./components/ui/card";
 import JobTitle from "./components/JobTitle";
+import Project from "./components/Project";
 
 const App = () => {
   return (
@@ -99,10 +100,11 @@ const App = () => {
                   dates="August 2025 - Present"
                   bullets={[
                     "Led a team of 3 engineers to develop a mission critical Electron application communicating to a Go backend via websockets",
-                    "Architected this Electron application with a focus on modularity and maintainability based on designs from Figma",
-                    "Worked closely with the customer to ensure requirements were met and exceeded",
+                    "Architected the Electron application with a focus on modularity and maintainability based on Figma designs",
+                    "Worked closely with the customer and SE team to ensure requirements were met",
+                    "Served as the Software Product Owner, where I was responsible for prioritizing the backlog and ensuring timely delivery of features",
                   ]}
-                  badges={["React", "Electron", "Go", "Docker"]}
+                  badges={["Typescript", "React", "Electron", "Go", "Docker"]}
                 />
                 <JobTitle
                   title="Junior Software Engineer"
@@ -125,6 +127,58 @@ const App = () => {
                 />
               </div>
             </div>
+          </Card>
+        </div>
+        <div className="flex flex-col gap-2">
+          <Header label="Projects" />
+          <Card className="flex h-fit w-full flex-col gap-6 px-5">
+            <Project
+              title="Shadow Cap"
+              image="/public/shadow-cap.png"
+              bullets={[
+                "Built a ShadowPlay-inspired desktop screen recorder using Electron, React, and TypeScript",
+                "Implemented a rolling buffer system to continuously capture the last X minutes of screen activity",
+                "Added global hotkey system for screenshot capture, buffer save, and recording control",
+                "Implemented export pipeline with customizable output directory",
+              ]}
+              badges={["React", "Electron", "TypeScript"]}
+              links={[
+                {
+                  label: "GitHub",
+                  url: "https://github.com/IBlakeI/shadow-cap",
+                },
+              ]}
+            />
+            <Project
+              title="Home Lab"
+              image="/public/stats-ui.png"
+              bullets={[
+                "Raspberry Pi-based homelab with Pi-hole DNS filtering",
+                "Full-stack system monitoring dashboard (React + Vite + TypeScript + FastAPI)",
+                "Custom systemd service exposing real-time system metrics",
+                "Live tracking of CPU, RAM, storage, and uptime",
+                "Self-hosted infrastructure monitoring UI",
+              ]}
+              badges={["React", "Electron", "TypeScript"]}
+            />
+            <Project
+              title="Valorant Overlay"
+              image="/public/valorant-overlay.png"
+              bullets={[
+                "Electron-based Valorant stream overlay showing rank, Elo, and recent match changese",
+                "Integrated public API for live player stats and match history",
+                "Configurable Riot ID, region, fonts, and background styling",
+                "Lightweight overlay optimized for streaming (OBS-friendly)",
+                "Real-time updates for rank and Elo tracking",
+              ]}
+              badges={["React", "Electron", "TypeScript"]}
+              links={[
+                {
+                  label: "GitHub",
+                  url: "https://github.com/IBlakeI/valorantoverlay",
+                },
+              ]}
+            />
           </Card>
         </div>
       </div>
