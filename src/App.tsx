@@ -165,7 +165,7 @@ const App = () => {
               title="Valorant Overlay"
               image="valorant-overlay.png"
               bullets={[
-                "Electron-based Valorant stream overlay showing rank, Elo, and recent match changese",
+                "Electron-based Valorant stream overlay showing rank, Elo, and recent match gain/loss",
                 "Integrated public API for live player stats and match history",
                 "Configurable Riot ID, region, fonts, and background styling",
                 "Lightweight overlay optimized for streaming (OBS-friendly)",
