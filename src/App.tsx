@@ -163,7 +163,7 @@ const App = () => {
             />
             <Project
               title="Valorant Overlay"
-              image="/public/valorant-overlay.png"
+              image="valorant-overlay.png"
               bullets={[
                 "Electron-based Valorant stream overlay showing rank, Elo, and recent match changese",
                 "Integrated public API for live player stats and match history",
