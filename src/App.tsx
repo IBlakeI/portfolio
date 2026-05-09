@@ -159,7 +159,7 @@ const App = () => {
                 "Live tracking of CPU, RAM, storage, and uptime",
                 "Self-hosted infrastructure monitoring UI",
               ]}
-              badges={["React", "Electron", "TypeScript"]}
+              badges={["React", "TypeScript", "Python", "Docker"]}
             />
             <Project
               title="Valorant Overlay"
