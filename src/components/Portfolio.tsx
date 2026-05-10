@@ -9,7 +9,7 @@ import Project from "./Project";
 
 const Portfolio = () => {
   return (
-    <div className="bg-background/90 dark flex min-h-screen w-full flex-col items-center overflow-y-auto px-4 py-6 text-white">
+    <div className="dark flex min-h-screen w-full flex-col items-center overflow-y-auto px-4 py-6 text-white">
       <div className="flex w-full max-w-2xl flex-col gap-4 md:flex-row md:justify-between">
         <div className="flex items-center gap-5">
           <Avatar className="h-20 w-20">
