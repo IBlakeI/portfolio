@@ -163,16 +163,36 @@ export default function SaturnScene() {
     const OUTER = 9.5;
     const PARTICLE_COUNT = 6000;
 
-    // Flat circle disc
-    const discGeo = new THREE.CircleGeometry(1, 7);
-    const discMat = new THREE.MeshBasicMaterial({
-      color: 0x999aaa,
-      side: THREE.DoubleSide,
+    const rockGeo = new THREE.SphereGeometry(1, 5, 4);
+    const rockMat = new THREE.MeshStandardMaterial({
+      color: 0xb0a890,
+      roughness: 0.95,
+      metalness: 0.0,
     });
-    const ringMesh = new THREE.InstancedMesh(discGeo, discMat, PARTICLE_COUNT);
+    const ringMesh = new THREE.InstancedMesh(rockGeo, rockMat, PARTICLE_COUNT);
     ringMesh.rotation.x = RING_TILT;
     ringMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
     scene.add(ringMesh);
+
+    const instanceColors = new Float32Array(PARTICLE_COUNT * 3);
+    const rockPalette = [
+      [0.85, 0.82, 0.78], // warm grey
+      [0.92, 0.9, 0.88], // icy white
+      [0.7, 0.65, 0.58], // dark rock
+      [0.78, 0.72, 0.62], // brownish
+      [0.95, 0.93, 0.9], // bright ice
+    ];
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      const col = rockPalette[Math.floor(Math.random() * rockPalette.length)];
+      const brightness = 0.75 + Math.random() * 0.25;
+      instanceColors[i * 3] = col[0] * brightness;
+      instanceColors[i * 3 + 1] = col[1] * brightness;
+      instanceColors[i * 3 + 2] = col[2] * brightness;
+    }
+    ringMesh.instanceColor = new THREE.InstancedBufferAttribute(
+      instanceColors,
+      3,
+    );
 
     interface ParticleData {
       orbitRadius: number;
@@ -182,6 +202,8 @@ export default function SaturnScene() {
       yOffset: number;
       tiltX: number;
       tiltZ: number;
+      spinX: number;
+      spinZ: number;
     }
 
     const particles: ParticleData[] = [];
@@ -199,13 +221,16 @@ export default function SaturnScene() {
       const angle = Math.random() * Math.PI * 2;
       // Orbit speed of ring
       const speed = (0.0008 + Math.random() * 0.0014) * Math.sqrt(INNER / r);
-      // Random size for orbiting rocks
+      // Random size for orbiting rocks — non-uniform so they look like real debris
       const size = 0.012 + Math.random() * 0.045;
       // Very thin ring — tiny vertical scatter
       const yOffset = (Math.random() - 0.5) * 0.12;
-      // Random face tilt so discs aren't all perfectly flat
-      const tiltX = (Math.random() - 0.5) * 0.6;
-      const tiltZ = (Math.random() - 0.5) * 0.6;
+      // Random initial orientation so rocks tumble naturally
+      const tiltX = Math.random() * Math.PI * 2;
+      const tiltZ = Math.random() * Math.PI * 2;
+      // Individual slow tumble rates
+      const spinX = (Math.random() - 0.5) * 0.003;
+      const spinZ = (Math.random() - 0.5) * 0.003;
 
       particles.push({
         orbitRadius: r,
@@ -215,6 +240,8 @@ export default function SaturnScene() {
         yOffset,
         tiltX,
         tiltZ,
+        spinX,
+        spinZ,
       });
 
       // Set initial matrix
@@ -313,6 +340,9 @@ export default function SaturnScene() {
       for (let i = 0; i < PARTICLE_COUNT; i++) {
         const p = particles[i];
         p.orbitAngle += p.orbitSpeed;
+        // Tumble each rock slowly on its own axes
+        p.tiltX += p.spinX;
+        p.tiltZ += p.spinZ;
         _pos.set(
           Math.cos(p.orbitAngle) * p.orbitRadius,
           p.yOffset,
