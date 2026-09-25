@@ -99,8 +99,8 @@ const Portfolio = () => {
                   dates="August 2025 - Present"
                   bullets={[
                     "Led UI development across two UAS programs, providing technical direction to a team of 3 while remaining hands-on",
-                    "Built responsive interfaces with TypeScript, React, and Electron, collaborating closely with UX and systems engineering teams.",
-                    "Reverse-engineered and modernized a legacy application, improving performance, maintainability, and overall usability.",
+                    "Built responsive interfaces with TypeScript, React, and Electron, collaborating closely with UX and systems engineering teams",
+                    "Reverse-engineered and modernized a legacy application, improving performance, maintainability, and overall usability",
                     "Served as the Software Product Owner, where I was responsible for prioritizing the backlog and ensuring timely delivery of features",
                   ]}
                   badges={["Typescript", "React", "Electron", "Go", "Docker"]}
