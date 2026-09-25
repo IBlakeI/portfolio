@@ -132,23 +132,6 @@ const Portfolio = () => {
           <Header label="Projects" />
           <Card className="flex h-fit w-full flex-col gap-6 px-5">
             <Project
-              title="Shadow Cap"
-              image="shadow-cap.png"
-              bullets={[
-                "Built a ShadowPlay-inspired desktop screen recorder using Electron, React, and TypeScript",
-                "Implemented a rolling buffer system to continuously capture the last X minutes of screen activity",
-                "Added global hotkey system for screenshot capture, buffer save, and recording control",
-                "Implemented export pipeline with customizable output directory",
-              ]}
-              badges={["React", "Electron", "TypeScript"]}
-              links={[
-                {
-                  label: "GitHub",
-                  url: "https://github.com/IBlakeI/shadow-cap",
-                },
-              ]}
-            />
-            <Project
               title="Home Lab"
               image="stats-ui.png"
               bullets={[
@@ -175,6 +158,24 @@ const Portfolio = () => {
                 {
                   label: "GitHub",
                   url: "https://github.com/IBlakeI/valorantoverlay",
+                },
+              ]}
+            />
+            <Project
+              title="Shadow Cap"
+              image="shadow-cap.png"
+              bullets={[
+                "Built a ShadowPlay-inspired desktop screen recorder using Electron, React, and TypeScript",
+                "Implemented a rolling buffer system to continuously capture the last X minutes of screen activity",
+                "Added global hotkey system for screenshot capture, buffer save, and recording control",
+                "Implemented export pipeline with customizable output directory",
+                "Early prototype: functionality is still being tested and refined",
+              ]}
+              badges={["React", "Electron", "TypeScript"]}
+              links={[
+                {
+                  label: "GitHub",
+                  url: "https://github.com/IBlakeI/shadow-cap",
                 },
               ]}
             />
